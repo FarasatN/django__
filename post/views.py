@@ -34,7 +34,7 @@ def post_detail(request,slug):
 		return HttpResponseRedirect(post.get_absolute_url())
 
 	context = {
-		'post': post,
+		'post':post,
 		'form':form,
 	}
 	return render(request, 'post/detail.html', context)
