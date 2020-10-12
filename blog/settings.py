@@ -169,3 +169,5 @@ RECAPTCHA_PRIVATE_KEY = '6LdNbs4ZAAAAADXKOEQiRUaq-zjlk39rOa4fDPPD'
 # )
 
 
+import django_heroku
+django_heroku.settings(locals())
