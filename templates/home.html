@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	HomePage - {{block.super}}
+{% endblock title %}
+
+		
+{% block body %}
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-md-4" style="background-color:rgb(23, 3, 201);height: 70px;"></div>
+			<div class="col-md-4" style="background-color:rgb(243, 8, 8);height: 70px;"></div>
+			<div class="col-md-4" style="background-color:rgb(3, 165, 3); height: 70px;"></div>
+		</div>
+		<br>
+		{% csrf_token %}
+				<em>Welcome!</em>	 {{ request.user.get_full_name }}
+		
+	</div>
+	<br><br>
+
+	<img src="{% static '/img/800.gif' %}" alt="The Universe is rotating..." style="max-width:100%; height:auto; display: block;
+	width: 98%;
+	margin-left: auto;
+	margin-right: auto;">
+		
+
+
+{% endblock %} 

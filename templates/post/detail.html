@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+  
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="thumbnail">
+				<div class="caption">
+					{% if post.image %}
+						<img src="{{ post.image.url }}" class="img-responsive" alt="not found">
+					{% endif %}					
+					<h3><a href="{{ post.get_absolute_url }}">{{post.title}}</a><small>  {{post.publishing_date}}</small></h3>
+					<h4>Writer: {{post.user.get_full_name}}</h4>
+					<p>{{post.content|safe|linebreaks}}</p>
+					<p><a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Inspect</a></p>
+					{% if request.user.is_authenticated %}
+						<p><a href="{{ post.get_update_url }}" class="btn btn-success" role="button">Update</a></p>
+						<p><a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Delete</a></p>
+					{% endif %}
+				</div>
+			</div>
+
+
+			<br><br><hr>
+			<h3>Add Comment:</h3>
+			{% include "post/comment.html" %}
+			<hr>
+			<h3>Comments:</h3>
+			{% for comment in post.comments.all %}				
+				<h4>{{ comment.name }} | <small>{{ comment.created_date|timesince }} before</small></h4>
+				<p>{{ comment.content|linebreaks }}</p>  
+				<hr>
+			{% endfor %}
+
+		</div>
+	</div>
+	</div>
+
+{% endblock %}
