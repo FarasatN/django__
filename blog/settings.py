@@ -94,13 +94,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blog',
-        'USER': 'farasat',
-        'PASSWORD': 'fesi3228',
-        'HOST': 'localhost',
-        'PORT': '',
+        'USER': 'dvpegndjjnzkwy',
+        'PASSWORD': '6acaa530e79a1623408d41985a51e5ff79d994307cb7ea03dd3c34872916b39c',
+        'HOST': 'ec2-54-75-199-252.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
+postgres://dvpegndjjnzkwy:6acaa530e79a1623408d41985a51e5ff79d994307cb7ea03dd3c34872916b39c@ec2-54-75-199-252.eu-west-1.compute.amazonaws.com:5432/dg4l06m7j0u0a
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
