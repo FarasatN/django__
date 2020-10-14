@@ -26,7 +26,7 @@
 					<p>{{ post.content|safe|linebreaks|truncatechars:150 }}</p>
 					<hr>
 					<p><a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Inspect</a></p>
-					{%	if request.user.is_authenticated %}
+					{%	if request.user.is_authenticated and request.user.is_superuser %}
 						<p><a href="{{ post.get_update_url }}" class="btn btn-success" role="button">Update</a></p>
 						<p><a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Delete</a></p>
 					{% endif %}

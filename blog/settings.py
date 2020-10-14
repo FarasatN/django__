@@ -90,14 +90,25 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'blog',
+#         'USER': 'dvpegndjjnzkwy',
+#         'PASSWORD': '6acaa530e79a1623408d41985a51e5ff79d994307cb7ea03dd3c34872916b39c',
+#         'HOST': 'ec2-54-75-199-252.eu-west-1.compute.amazonaws.com',
+#         'PORT': 5432,
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blog',
-        'USER': 'dvpegndjjnzkwy',
-        'PASSWORD': '6acaa530e79a1623408d41985a51e5ff79d994307cb7ea03dd3c34872916b39c',
-        'HOST': 'ec2-54-75-199-252.eu-west-1.compute.amazonaws.com',
-        'PORT': 5432,
+        'USER': 'farasat',
+        'PASSWORD': 'fesi3228',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

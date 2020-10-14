@@ -76,7 +76,7 @@ def post_create(request):
 
 def post_update(request,slug):
 
-	if not request.user.is_authenticated:
+	if not request.user.is_authenticated and request.user.is_superuser:
 		return Http404()
 		
 	post = get_object_or_404(Post, slug=slug)
@@ -93,7 +93,7 @@ def post_update(request,slug):
 def post_delete(request,slug):
 	# if not request.user.is_authenticated:
 	# 	return Http404()
-	if not request.user.is_authenticated:
+	if not request.user.is_authenticated and request.user.is_superuser:
 		return Http404
 	post = get_object_or_404(Post, slug=slug)
 	post.delete()	

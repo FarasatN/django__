@@ -8,7 +8,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 class Post(models.Model):
-	user = models.ForeignKey('auth.User',verbose_name='writer',on_delete=models.CASCADE)
+	user = models.ForeignKey('auth.User',verbose_name='writer',related_name='posts',on_delete=models.CASCADE)
 	title = models.CharField(max_length=120,verbose_name='Title')
 	content = RichTextField(verbose_name='Content')
 	publishing_date = models.DateTimeField(verbose_name='Publishing Date', auto_now_add=True)
